@@ -1,0 +1,26 @@
+{
+  "name": "akshay-practice-2",
+  "version": "1.0.0",
+  "description": "this is a live course",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "khushi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@parcel/babel-preset-env": "^2.12.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  }
+}
