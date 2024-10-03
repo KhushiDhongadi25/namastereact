@@ -3,17 +3,13 @@ import RestuarantCard from "./RestuarantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
 import {Link} from "react-router-dom";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 // what is state
 // what is react hooks? - functions
 // what is useState
 
-function filterData(searchInput, restuarants) {
-  const filterData = restuarants.filter((restuarant) =>
-    restuarant?.info?.name?.toLowerCase()?.includes(searchInput.toLowerCase())
-  );
-  return filterData;
-}
 
 const Body = () => {
   // create variables in js
@@ -37,6 +33,12 @@ const Body = () => {
     // console.log("render3");
     setAllRestuarants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestuarants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  }
+
+  const isOnline = useOnline();
+
+  if (!isOnline){
+    return <h1> OFFLINE, PLEASE CHECK YOUR INTERNET CONNECTION..</h1>;
   }
 
   // console.log("render4");
