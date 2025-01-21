@@ -14,7 +14,7 @@ const Profile = (props) => {
             clearInterval(timer);
             console.log("useEffect Return");
         }
-    },[]); 
+    }); 
     console.log("render"); 
     return (
         <div>

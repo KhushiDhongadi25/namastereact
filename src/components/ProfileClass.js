@@ -29,7 +29,12 @@ class Profile extends React.Component{
         console.log("child - componentDidMount "+this.props.name); 
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps, prevState){
+        if(this.state.count == prevState.count ||
+            this.state.count == prevState.count
+    ) {
+        // code
+    }
         console.log("component did update");
     }
 

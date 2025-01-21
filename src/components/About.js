@@ -1,4 +1,5 @@
 // import { Outlet } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 import ProfileFuncComp from "./Profile";
 import Profile from "./ProfileClass";
 import { Component } from "react";
@@ -31,6 +32,15 @@ class About extends Component {
         return(
             <div>
             <h1>about us page</h1>
+
+            <UserContext.Consumer>
+                {({user}) => (                    <h4 className="font-bold text-xl p-10">
+                        {user.name} - {user.email}
+                    </h4>
+                )}
+            </UserContext.Consumer>
+
+
             <p>this is namaste react live course</p>
             <ProfileFuncComp name={"KHUSHI"}/>
             <Profile name={"first class"}/>

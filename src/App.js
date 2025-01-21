@@ -17,7 +17,7 @@
  *   -copyright
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -32,6 +32,7 @@ import Shimmer from './components/shimmer';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import RestuarantMenu from './components/RestuarantMenu';
+import UserContext from './utils/UserContext';
 
 
 // chunking
@@ -47,11 +48,18 @@ const Instamart = lazy(() => import("./components/Instamart"));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Khushi",
+    email: "khushidhongadi25@gmail.com",
+  });
+
  return (
- <>
+  <>
+ <UserContext.Provider value={{user: user,}}>
  <Header />
  <Outlet />
  <Footer />
+ </UserContext.Provider>
  </>
  );
 };

@@ -15,15 +15,15 @@ const RestuarantMenu = () => {
     const restuarant = useRestuarant(id);
 
     return (!restuarant) ? <Shimmer /> : (
-        <div>
-            <div>
+        <div className="p-3">
+            <div className="mx-56">
             {/* <h1>Restuarant id: {id}</h1> */}
-            <h2>{"RestuarantId: "+ restuarant?.id}</h2>
-            <img className="menuImg" src={IMG_CDN_URL + restuarant?.cloudinaryImageId } />
-            <h3>{"Area Name: "+restuarant?.areaName}</h3>
-            <h3>{"City Name: "+restuarant?.city}</h3>
-            <h3>{"Average Rating: "+restuarant?.avgRating} stars</h3>
-            <h3>{"Price for Two: "+restuarant?.costForTwo}</h3>
+            <h2 className="bg-orange-400 font-bold">{"--> RestuarantId: "+ restuarant?.id}</h2>
+            <img className="w-60 m-3 p-1.5 rounded-3xl bg-gray-300" src={IMG_CDN_URL + restuarant?.cloudinaryImageId } />
+            <h3 className="bg-orange-400 font-bold">{"• Area Name: "+restuarant?.areaName}</h3>
+            <h3 className="bg-orange-400 font-bold">{"• City Name: "+restuarant?.city}</h3>
+            <h3 className="bg-orange-400 font-bold">{"• Average Rating: "+restuarant?.avgRating} stars</h3>
+            <h3 className="bg-orange-400 font-bold">{"• Price for Two: "+restuarant?.costForTwo}/2</h3>
             </div>
             {/* <div>
                 <h1>Menu</h1>
